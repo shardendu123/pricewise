@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/pricewise/', // For GitHub Pages deployment
+  base: '/', // Vercel serves from the domain root — assets must resolve from '/'
 })
