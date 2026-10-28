@@ -1,0 +1,290 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  --color-navy-950: #060b18;
+  --color-navy-900: #0a1020;
+  --color-navy-800: #0f1930;
+  --color-navy-700: #152040;
+  --color-navy-600: #1e2d54;
+  
+  --color-violet-500: #8b5cf6;
+  --color-violet-400: #a78bfa;
+  --color-violet-300: #c4b5fd;
+  
+  --color-electric-500: #3b82f6;
+  --color-electric-400: #60a5fa;
+  --color-electric-300: #93c5fd;
+  
+  --color-accent-cyan: #06b6d4;
+  --color-accent-emerald: #10b981;
+  --color-accent-amber: #f59e0b;
+  --color-accent-rose: #f43f5e;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #060b18;
+    color: #f1f5f9;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a1020;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1e2d54;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8b5cf6;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(15, 25, 48, 0.7);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+  }
+
+  .glass-card-hover {
+    background: rgba(15, 25, 48, 0.7);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    transition: all 0.25s ease;
+  }
+
+  .glass-card-hover:hover {
+    border-color: rgba(139, 92, 246, 0.4);
+    background: rgba(21, 32, 64, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+  }
+
+  .btn-secondary {
+    background: rgba(139, 92, 246, 0.1);
+    color: #a78bfa;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: rgba(139, 92, 246, 0.6);
+    color: #c4b5fd;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: #94a3b8;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+
+  .btn-ghost:hover {
+    background: rgba(139, 92, 246, 0.08);
+    border-color: rgba(139, 92, 246, 0.2);
+    color: #e2e8f0;
+  }
+
+  .input-field {
+    background: rgba(15, 25, 48, 0.8);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    color: #f1f5f9;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .input-field:focus {
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+  }
+
+  .input-field::placeholder {
+    color: #475569;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .badge-violet {
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+  }
+
+  .badge-blue {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+  }
+
+  .badge-emerald {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+  }
+
+  .badge-amber {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+  }
+
+  .badge-rose {
+    background: rgba(244, 63, 94, 0.15);
+    color: #fb7185;
+    border: 1px solid rgba(244, 63, 94, 0.25);
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-top: 8px;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #a78bfa, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .star-rating {
+    display: inline-flex;
+    gap: 2px;
+    color: #fbbf24;
+  }
+
+  .price-tag {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    letter-spacing: -0.5px;
+  }
+
+  .price-original {
+    font-size: 0.9rem;
+    color: #475569;
+    text-decoration: line-through;
+  }
+
+  .nav-link {
+    color: #94a3b8;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+
+  .nav-link:hover {
+    color: #f1f5f9;
+    background: rgba(139, 92, 246, 0.1);
+  }
+
+  .nav-link.active {
+    color: #a78bfa;
+    background: rgba(139, 92, 246, 0.12);
+  }
+
+  .tag-pill {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: rgba(30, 45, 84, 0.8);
+    color: #94a3b8;
+    border: 1px solid rgba(139, 92, 246, 0.12);
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.2), transparent);
+    margin: 32px 0;
+  }
+}
